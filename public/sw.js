@@ -1,11 +1,11 @@
 const CACHE_NAME = 'komunitas-v1';
 const urlsToCache = [
-  '/',
-  '/auth',
-  '/app',
-  '/static/js/bundle.js',
-  '/static/css/main.css',
-  '/manifest.json'
+  '/komunitas/',
+  '/komunitas/auth',
+  '/komunitas/app',
+  '/komunitas/static/js/bundle.js',
+  '/komunitas/static/css/main.css',
+  '/komunitas/manifest.json'
 ];
 
 // Install event
