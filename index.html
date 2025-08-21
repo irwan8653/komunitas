@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Komunitas Tertutup - Private Community Chat</title>
+    <meta name="description" content="Join our exclusive private community chat platform. Connect with like-minded members in a secure, closed environment." />
+    <meta name="author" content="Komunitas Tertutup" />
+    <meta name="keywords" content="private chat, community, secure messaging, closed group" />
+
+    <!-- PWA manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Komunitas" />
+
+    <!-- Social meta tags -->
+    <meta property="og:title" content="Komunitas Tertutup - Private Community Chat" />
+    <meta property="og:description" content="Join our exclusive private community chat platform. Connect with like-minded members in a secure, closed environment." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://your-domain.com" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Komunitas Tertutup" />
+    <meta name="twitter:description" content="Private community chat platform" />
+
+    <!-- Favicon and icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/icon-512x512.png" />
+    <link rel="apple-touch-icon" href="/icon-192x192.png" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- PWA service worker registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>
