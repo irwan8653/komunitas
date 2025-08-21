@@ -39,7 +39,10 @@
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/komunitas/sw.js')
+          const publicUrl = new URL(window.location.pathname, window.location.origin);
+          const swUrl = new URL('sw.js', publicUrl).pathname;
+
+          navigator.serviceWorker.register(swUrl)
             .then((registration) => {
               console.log('SW registered: ', registration);
             })
